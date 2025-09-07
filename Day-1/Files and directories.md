@@ -77,5 +77,54 @@ Note: Wildcards are powerful tools for working with group files. THe most common
   cp *.jpg /home/user/document
   ```
 ## 2)move
-- mv command is used for moving files and also renamming them.
-- Quiet similar t `cp` command in terms of flag and functionality
+- mv command is used for moving files and also renamming them.<br>
+- Quiet similar t `cp` command in terms of flag and functionality<br>
+  ```bash
+  mv hello_copy.txt ..
+  ```
+  ● `..` means parent directory one level up.<br>
+  ● for detailed explanation refer to the basic-commands repository<br>
+## 3)remove 
+- `rm` command is used to remove the files and directories.<br>
+- now lets remove the file.txt we created before.<br>
+```bash
+rm file1.txt
+```
+-now lets remove a directory.<br>
+```bash
+rmdir directory_name
+```
+
+-we have some options we can use in the rm command.<br>
+like<br>
+```bash
+rm -i file1.txt
+```
+-gives prompt on whether you want to actually remove the files or directories.<br>
+```bash
+rm -r directory
+```
+-removes all the subdirectories recursively.<br>
+NOTE: be careful with this linux command because the deleted files don't go the bin.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now finall we have to check whether the directories or the files are removed or not.<br>
+to do that we don't have to go to our system Home we can check it in our terminal we are currently working on.<br>
+just use the command `ls` to check whether the directory is deleted or not.<br>
+
+# Using command Line shortcuts
+● To make command line experience more efficient linux provides several helpful shortcuts.<br>
+## up arrowkey(↑): 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to recall the last commands you typed.<br>
+## Tab completion:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type `cat h` and then press Tab key.<br>
+auto completes `cat hello.txt`
+## ctrl+c:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to interrupt running command<br>
+Example:<br>
+``` bash
+tail -f /dev/null
+```
+here `tail` is used to display last part of the file.<br>
+`-f` option mean follows.<br>
+`/dev/null` specific file that discards all data written to it.(i.e., a blackhole).<br>
+## ctrl+l:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to clear the screen<br>
