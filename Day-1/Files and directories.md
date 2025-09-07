@@ -31,4 +31,7 @@ cat hello.txt
 output:<br>
 <img width="537" height="91" alt="Screenshot from 2025-09-07 12-11-18" src="https://github.com/user-attachments/assets/1bd68e77-26c0-4312-9170-098319ab5cdd" />
 
-#
+# using wild cards
+-wildcards are special characters that help you work with multiple files at once.
+-they are search patterns for file names.
+-search patterns mean systematic methods or algorithms used to fine specific information within a larger dataset,ar
