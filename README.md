@@ -10,5 +10,5 @@ I'm updating it frequently with commands, examples, and small programms.
    -Useful for beginners learning **Linux & cybersecurity**<br>
 
 ### Day-1
- 1)About shell
- 2)Files and Drectories
+ 1)About shell<br>
+ 2)Files and Drectories<br>
