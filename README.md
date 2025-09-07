@@ -6,8 +6,9 @@ I'm updating it frequently with commands, examples, and small programms.
 
 ## 📌About
    -A collection of **Linux Commands**<br>
-   -Daily practice notes(`Day1.md'`,`day2.md` ,etc)<br>
+   -Daily practice notes(Day1,day2,etc)<br>
    -Useful for beginners learning **Linux & cybersecurity**<br>
 
 ### Day-1
  1)About shell
+ 2)Files and Drectories
