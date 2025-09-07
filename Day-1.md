@@ -9,3 +9,4 @@
     ▷ Depending on the distribution your shell, prompt might change.
     prompt on bash: 
        username@hostname:Current_directory
+        ![Day-1 Screenshot](shell.png)
