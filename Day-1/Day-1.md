@@ -9,4 +9,4 @@
     ▷ Depending on the distribution your shell, prompt might change.
     prompt on bash: 
        username@hostname:Current_directory
-        ![Shell Screenshot](./shell.png)
+        ![image Alt](shell.png)
