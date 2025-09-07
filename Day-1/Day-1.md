@@ -9,4 +9,4 @@
     ▷ Depending on the distribution your shell, prompt might change.
     prompt on bash: 
        username@hostname:Current_directory
-        ![image Alt](https://github.com/yaminisaikam/My-Linux-Journey/blob/81cd7ffeddeb318667a9263647ff6a8f9e3e820e/Day-1/shell.png)
+<img width="288" height="115" alt="shell" src="https://github.com/user-attachments/assets/03caa420-391e-42f8-bfde-4aeed91487f1" />
