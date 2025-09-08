@@ -12,3 +12,5 @@ I'm updating it frequently with commands, examples, and small programms.
 ### Day-1
  1)About shell<br>
  2)Files and Drectories<br>
+### Day-2
+  User account management<br>
