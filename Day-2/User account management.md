@@ -90,3 +90,127 @@ sudo usermod -d /home/wayne joker
   sudo grep -w 'joker' /etc/passwd
   ```
   <img width="541" height="63" alt="Screenshot from 2025-09-08 16-56-13" src="https://github.com/user-attachments/assets/a9a98bf1-cad5-446c-8d64-1f5276f6486f" /><br>
+## Changing user Shell
+- Another important setting we can modify is the users default shell.<br>
+- By default,the user `joker` is using `/bin/sh` as their shell.
+1) How to change Shell:<br>
+```bash
+sudo usermod -s /bin/bash joker
+```
+- `-s` is a option that speciifies the new login shell for the user.<br>
+2) To verify the changes<br>
+```bash
+sudo grep -w 'joker' /etc/password
+```
+<img width="433" height="118" alt="Screenshot from 2025-09-08 20-32-30" src="https://github.com/user-attachments/assets/29c9df4d-4224-4f80-af30-004f04864111" /><br>
+# Adding user to a Group
+- In Linux, we use groups to organize users and manage permissions.<br>
+- One important group is `sudo` group, which gives users administrative privileges.<br>
+- Lets add joker to the sudo group.<br>
+⭐ Remember: Adding a user to the sudo group gives them significant power over the system, so this should be done cautiously and only when necessary.<br>
+1) Adding `joker` to the `sudo` group.<br>
+```bash
+sudo usermod -aG sudo joker
+```
+- `-aG` append to a group, without removing from other groups.<br>
+- `sudo` group we are adding user to.<br>
+2) Verify the change<br>
+```bash
+groups joker
+```
+- you should see `sudo` listed among the joker's groups.<br>
+<img width="433" height="118" alt="Screenshot from 2025-09-08 20-45-31" src="https://github.com/user-attachments/assets/fe2a604a-3410-4e42-b98e-277b9ec3fdc3" /><br>
+3) Switch to the joker user and try a command that requires sudo privileges.<br>
+```bash
+su - joker
+```
+- It asks for password : `password123`(which we kept while creating the user `joker`)<br>
+4) Now use this command to chech the user has the sudo privileges:<br>
+```bash
+sudo cat /etc/shadow
+```
+`/etc/shadow` is a file which is usually only accessible to root(i.e., sudo user)<br>
+5) After you are done, type `exit` to return to original user account.<br>
+## Locking and unlocking User Accounts
+- some times, you might need to trmporarily disable a user account without deletinf it.<br>
+1) Lock the `joker` account<br>
+```bash
+sudo passwd -l joker
+```
+- `-l` locks the password.<br>
+- the sample output would be like this.
+<img width="423" height="59" alt="Screenshot from 2025-09-08 20-59-26" src="https://github.com/user-attachments/assets/64e3118e-66b0-4225-9a63-ab5b62996871" /><br>
+2) Try switching to the joker user<br>
+```bash
+su - joker
+```
+- then enter the password `password123`.<br>
+<img width="423" height="75" alt="Screenshot from 2025-09-08 21-01-46" src="https://github.com/user-attachments/assets/afbecd09-5ce5-485a-83a5-dee2e8147174" /><br>
+3) Unlock the user account <br>
+```bash
+sudo passwd -u joker
+```
+- `-u` option unlocks the password.<br>
+4) Try switching to the `joker` user again.<br>
+```bash
+su - joker
+```
+5) Type `exit`<br>
+## Deleting a user
+- to delete a user we use `userdel` command.<br>
+1) Now deleter the `bob` and their home directory.<br>
+```bash
+sudo userdel -r bob
+```
+- `userdel` to delete user account.<br>
+- `-r` option removes the user home directory and mail spool.<br>
+2) Verify that thr user has been deleted.<br>
+  ```bash
+  sudo grep -w 'bob' /etc/passwd
+  sudo ls -ld /home/bob
+  ```
+  <img width="516" height="110" alt="Screenshot from 2025-09-08 21-11-21" src="https://github.com/user-attachments/assets/3f8124fe-1e45-4990-b3a1-cde6a0462431" /><br>
+# View current user information
+- In Linux, each user has a unique username.<br>
+- Lets start by identifying which user were currently loged in as:<br>
+```bash
+whoami
+```
+`whoami` is a simple too that displays the username of current user.
+## Explore user groups
+- In Linux, user groups are a way to organize miltiple users for permission management.<br>
+- Each user has a primary group and can belong to multiple secondary groups.<br>
+  1)
+  ```bash
+  id user
+  ```
+  2) Now lets view all groups on the system<br>
+  ```bash
+  cat /etc/group | sort
+  ```
+  - `/etc/group` is where groups information is stored.<br>
+  - `| sort` sorts all the groups alphabetically.<br>
+  3) To see only groups releated to only your `user_name` use<br>
+  ```bash
+  cat /etc/group | grep -E 'user'
+  ```
+  ## Creating a new group and add user to it
+  - lets create new group called `developers` and add our new user `jack` to it.<br>
+  1)Adding group<br>
+    ```bash
+    sudo groupadd developers
+    ```
+  2)Add `jack`   (if `jack already existed no need to add`)<br>
+  ```bash
+  sudo useradd jack
+  ```
+  3)now add `jack` the group<br>
+  ```bash
+  sudo usermod -aG developers jack
+  ```
+  4) To verify jack added or not<br>
+  ```bash
+  groups jack
+  ```
+  - The sample output will be like this<br>
+  <img width="524" height="135" alt="Screenshot from 2025-09-08 21-33-50" src="https://github.com/user-attachments/assets/6929d0bc-3481-4e55-8454-eb6e39e2c99d" /><br>
