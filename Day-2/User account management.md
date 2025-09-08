@@ -24,4 +24,4 @@ id jack
 ```
 here `id` command will show you jacks user ID(UID), primary Group ID(GID) and any other secondary Groups.<br>
 <img width="506" height="93" alt="Screenshot from 2025-09-08 15-28-10" src="https://github.com/user-attachments/assets/615d0963-fe95-4aab-837c-2cbef92f74da" /><br>
-For the Secondary group creation → [Secondary Groups](##creating-a-new-user)
+For the Secondary group creation → [Secondary Groups](##-creating-a-new-user)
